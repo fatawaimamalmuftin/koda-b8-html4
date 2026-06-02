@@ -5,68 +5,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang form</title>
+    <style>
+        /* .borTes {
+            border: 2px solid red;
+            box-sizing: border-box;
+        } */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #E5DFF4;
+            display: flex;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 700px;
+            gap: 12px;
+        }
+
+        .formCard {
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .headerCard {
+            border-top: 10px solid #7248B9;
+            position: relative;
+        }
+
+        .h1 {
+            font-size: 32px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 8px;
+        }
+
+        .Pertanyaan {
+            font-size: 16px;
+            color: #202124;
+            font-weight: 500;
+        }
+
+        .input {
+            width: 100%;
+            max-width: 360px;
+            border: none;
+            border-bottom: 1px solid #dadce0;
+            padding: 8px 0;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .input:focus {
+            border-bottom: 2px solid #7248B9;
+        }
+
+        .optionRow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .optionRow input[type="radio"],
+        .optionRow input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #7248B9;
+            cursor: pointer;
+        }
+
+        .buttonGrup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+
+        .btnSubmit {
+            background-color: #7248B9;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.1s ease, transform 0.1s ease;
+        }
+
+        .btnSubmit:hover {
+            background-color: #5b359c;
+        }
+
+        .btnSubmit:active {
+            transform: scale(0.96);
+        }
+
+        .btn-reset {
+            background: none;
+            border: none;
+            color: #7248B9;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 10px 16px;
+            border-radius: 4px;
+            transition: background-color 0.1s ease;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <form action="/koda-b8-html4/hasilHimpunSurvei.html" method="get" target="_blank">
-            <label for="namaUser">Siapa nama anda?</label>
+
+    <form class="form borTes" action="/koda-b8-html4/hasilHimpunSurvei.html" method="get" target="_blank">
+
+        <div class="formCard headerCard borTes">
+            <h1>Kuisioner Survei</h1>
+        </div>
+
+        <div class="formCard borTes">
+            <label class="Pertanyaan" for="namaUser">Siapa nama anda?</label>
+            <input type="text" name="namaUser" id="namaUser" class="input" placeholder="Jawaban teks singkat">
+        </div>
+
+        <div class="formCard borTes">
+            <label class="Pertanyaan" for="umurUser">Berapa umur anda?</label>
+            <input type="text" name="umurUser" id="umurUser" class="input" placeholder="Jawaban teks singkat">
+        </div>
+
+        <div class="formCard">
+            <span class="Pertanyaan">Apa jenis kelamin anda?</span>
             <div>
-                <input type="text" name="namaUser" id="nama">
+                <div class="optionRow borTes">
+                    <input type="radio" name="JK" id="jk-l" value="laki-laki">
+                    <label Brass for="jk-l">Laki-laki</label>
+                </div>
+                <div class="optionRow">
+                    <input type="radio" name="JK" id="jk-p" value="Perempuan">
+                    <label for="jk-p">Perempuan</label>
+                </div>
             </div>
+        </div>
 
-            <label for="umurUser">Berapa umur anda?</label>
+        <div class="formCard borTes">
+            <span class="Pertanyaan">Apakah anda perokok?</span>
             <div>
-                <input type="text" name="umurUser">
+                <div class="optionRow borTes">
+                    <input type="radio" name="PR" id="pr-ya" value="Ya">
+                    <label for="pr-ya">Ya</label>
+                </div>
+                <div class="optionRow borTes">
+                    <input type="radio" name="PR" id="pr-tidak" value="Tidak">
+                    <label for="pr-tidak">Tidak</label>
+                </div>
             </div>
+        </div>
 
-            <label for="JK">Apa jenis kelamin anda?</label>
-
+        <div class="formCard borTes">
+            <span class="Pertanyaan">Rokok apa aja yg pernah kamu coba?</span>
             <div>
-                <input type="radio" name="JK" value="laki-laki">
-                <label for="JK">laki-laki</label>
-
-                <input type="radio" name="JK" value="Perempuan">
-                <label for="JK">Perempuan</label>
+                <div class="optionRow borTes">
+                    <input type="checkbox" name="RokokApa" id="ggF" value="Gudang Garam Filter">
+                    <label for="ggF">Gudang Garam Filter</label>
+                </div>
+                <div class="optionRow ">
+                    <input type="checkbox" name="RokokApa" id="LS" value="Lucky Strike">
+                    <label for="LS">Lucky Strike</label>
+                </div>
+                <div class="optionRow borTes">
+                    <input type="checkbox" name="RokokApa" id="MLB" value="Marlboro">
+                    <label for="MLB">Marlboro</label>
+                </div>
+                <div class="optionRow borTes">
+                    <input type="checkbox" name="RokokApa" id="ESE" value="Esse">
+                    <label for="ESE">Esse</label>
+                </div>
             </div>
+        </div>
 
-            <label for="Rokok">Apakah anda perokok?</label>
+        <div class="buttonGrup borTes">
+            <button type="submit" class="btnSubmit">Kirim</button>
+            <button type="reset" class="btn-reset">Kosongkan formulir</button>
+        </div>
 
-            <div>
-                <input type="radio" name="PR" value="Ya">
-                <label for="PR">Ya</label>
-                <input type="radio" name="PR" value="Tidak">
-                <label for="PR">Tidak</label>
-            </div>
+    </form>
 
-            <label for="RokokApa">Rokok apa aja yg pernah kamu coba?</label>
-
-            <div>
-                <input type="checkbox" name="RokokApa" id="ggF">
-                <label for="RokokApa">Gudang Garasm Filter</label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="RokokApa" id="LS">
-                <label for="RokokApa">Lucky Strike</label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="RokokApa" id="MLB">
-                <label for="RokokApa">Malboro</label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="RokokApa" id="ESE">
-                <label for="RokokApa">Esse</label>
-            </div>
-
-            <div>
-                <button type="reset">Hapus semua</button>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
 </body>
 
 </html>

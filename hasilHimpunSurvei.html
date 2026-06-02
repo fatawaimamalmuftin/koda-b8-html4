@@ -4,104 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hasuk survey</title>
+    <title>Hasil Survey</title>
+    <style>
+        /* .borTes {
+            border: 2px solid red;
+            box-sizing: border-box;
+        } */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #E5DFF4;
+            display: flex;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 700px;
+            gap: 12px;
+        }
+
+        .formCard {
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .headerCard {
+            border-top: 10px solid #7248B9;
+        }
+
+        .h1 {
+            font-size: 32px;
+            font-weight: 400;
+            color: #202124;
+        }
+
+        .table {
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 40px 150px 80px 100px 100px 1fr;
+            width: 100%;
+            min-width: 600px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .th,
+        .td {
+            padding: 12px 8px;
+            font-size: 14px;
+            color: #202124;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #edf0f2;
+        }
+
+        .th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #5f6368;
+            border-bottom: 2px solid #dadce0;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h2>Data berhasil masuk</h2>
-    <table border="2">
-        <tr>
-            <th>No</th>
-            <th>Nama User</th>
-            <th>Umur User</th>
-            <th>Jenis kenalin</th>
-            <th>Merokok Y/N</th>
-            <th>Rokok apa aja?</th>
-        </tr>
+    <div class="form borTes">
 
-        <tr>
-            <th>1. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
+        <div class="formCard headerCard borTes">
+            <h1>Hasil Survey</h1>
+        </div>
 
-        <tr>
-            <th>2. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>3. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>4 </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>5. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>6. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>7. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>8. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>9. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-        <tr>
-            <th>10. </th>
-            <td>Muftin</td>
-            <td>24</td>
-            <td>L</td>
-            <td>Yes</td>
-            <td>Ezbles</td>
-        </tr>
-    </table>
+        <div class="formCard borTes">
+            <div class="table borTes">
+                <div class="grid borTes">
+
+                    <div class="th borTes">No</div>
+                    <div class="th borTes">Nama User</div>
+                    <div class="th borTes">Umur User</div>
+                    <div class="th borTes">Jenis Kelamin</div>
+                    <div class="th borTes">Merokok Y/N</div>
+                    <div class="th borTes">Rokok apa aja?</div>
+
+                    <div class="td borTes">1.</div>
+                    <div class="td borTes">Fatawa imam al Muftin</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles, sampoerna, esse, la, lufman, ovo, haji dadang, jisamsu, evo, opo, dll
+                    </div>
+
+                    <div class="td borTes">2.</div>
+                    <div class="td borTes">Anjay irawan</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">3.</div>
+                    <div class="td borTes">Pito</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">4.</div>
+                    <div class="td borTes">Cana</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">5.</div>
+                    <div class="td borTes">Cupang</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">6.</div>
+                    <div class="td borTes">imam</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">7.</div>
+                    <div class="td borTes">yogi</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">8.</div>
+                    <div class="td borTes">Fatawa</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">9.</div>
+                    <div class="td borTes">Imam</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                    <div class="td borTes">10.</div>
+                    <div class="td borTes">AL</div>
+                    <div class="td borTes">24</div>
+                    <div class="td borTes">L</div>
+                    <div class="td borTes">Y</div>
+                    <div class="td borTes">Ezbles</div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 
