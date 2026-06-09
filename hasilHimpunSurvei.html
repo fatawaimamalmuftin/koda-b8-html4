@@ -103,82 +103,60 @@
                     <div class="th borTes">Merokok Y/N</div>
                     <div class="th borTes">Rokok apa aja?</div>
 
-                    <div class="td borTes">1.</div>
+                    <!-- <div class="td borTes">1.</div>
                     <div class="td borTes">Fatawa imam al Muftin</div>
                     <div class="td borTes">24</div>
                     <div class="td borTes">L</div>
                     <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles, sampoerna, esse, la, lufman, ovo, haji dadang, jisamsu, evo, opo, dll
-                    </div>
-
-                    <div class="td borTes">2.</div>
-                    <div class="td borTes">Anjay irawan</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">3.</div>
-                    <div class="td borTes">Pito</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">4.</div>
-                    <div class="td borTes">Cana</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">5.</div>
-                    <div class="td borTes">Cupang</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">6.</div>
-                    <div class="td borTes">imam</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">7.</div>
-                    <div class="td borTes">yogi</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">8.</div>
-                    <div class="td borTes">Fatawa</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">9.</div>
-                    <div class="td borTes">Imam</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
-
-                    <div class="td borTes">10.</div>
-                    <div class="td borTes">AL</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div>
+                    <div class="td borTes">Ezbles</div> -->
 
                 </div>
             </div>
         </div>
 
     </div>
+
+    <script>
+        let data = [];
+        data = localStorage.getItem("semuaDataSurvei");
+        data = JSON.parse(data);
+
+        const container = document.querySelector(".grid");
+
+        data.forEach((item, index) => {
+            const noUrut = document.createElement("div")
+            noUrut.classList.add("td")
+            noUrut.textContent = (index + 1);
+
+            const Dnama = document.createElement("div")
+            Dnama.classList.add("td")
+            Dnama.textContent = item.nama;
+
+            const Dumur = document.createElement("div");
+            Dumur.classList.add("td");
+            Dumur.textContent = item.umur;
+
+            const DJK = document.createElement("div")
+            DJK.classList.add("td")
+            DJK.textContent = item.jenisKelamin
+
+            const DPR = document.createElement("div")
+            DPR.classList.add("td")
+            DPR.textContent = item.YNrokok;
+
+            const DRokok = document.createElement("div")
+            DRokok.classList.add("td")
+            DRokok.textContent = item.macamRokok;
+
+            container.appendChild(noUrut);
+            container.appendChild(Dnama);
+            container.appendChild(Dumur);
+            container.appendChild(DJK);
+            container.appendChild(DPR);
+            container.appendChild(DRokok);
+        });
+    </script>
+
 
 </body>
 
