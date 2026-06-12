@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Survey</title>
     <style>
-        /* .borTes {
-            border: 2px solid red;
-            box-sizing: border-box;
-        } */
-
         * {
             margin: 0;
             padding: 0;
@@ -44,38 +39,49 @@
             border-top: 10px solid #7248B9;
         }
 
-        .h1 {
-            font-size: 32px;
-            font-weight: 400;
-            color: #202124;
-        }
-
-        .table {
+        .tableContainer {
             overflow-x: auto;
             width: 100%;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 40px 150px 80px 100px 100px 1fr;
-            width: 100%;
-            min-width: 600px;
             border: 1px solid #dadce0;
             border-radius: 4px;
-            overflow: hidden;
         }
 
-        .th,
-        .td {
+        .surveyTable {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            text-align: left;
+        }
+
+        .surveyTable th,
+        .surveyTable td {
             padding: 12px 8px;
             font-size: 14px;
             color: #202124;
-            display: flex;
-            align-items: center;
             border-bottom: 1px solid #edf0f2;
         }
 
-        .th {
+        .surveyTable th:nth-child(1) {
+            width: 40px;
+        }
+
+        .surveyTable th:nth-child(2) {
+            width: 150px;
+        }
+
+        .surveyTable th:nth-child(3) {
+            width: 80px;
+        }
+
+        .surveyTable th:nth-child(4) {
+            width: 100px;
+        }
+
+        .surveyTable th:nth-child(5) {
+            width: 100px;
+        }
+
+        .surveyTable th {
             background-color: #f8f9fa;
             font-weight: 600;
             color: #5f6368;
@@ -86,77 +92,68 @@
 
 <body>
 
-    <div class="form borTes">
+    <div class="form">
 
-        <div class="formCard headerCard borTes">
+        <div class="formCard headerCard">
             <h1>Hasil Survey</h1>
         </div>
 
-        <div class="formCard borTes">
-            <div class="table borTes">
-                <div class="grid borTes">
-
-                    <div class="th borTes">No</div>
-                    <div class="th borTes">Nama User</div>
-                    <div class="th borTes">Umur User</div>
-                    <div class="th borTes">Jenis Kelamin</div>
-                    <div class="th borTes">Merokok Y/N</div>
-                    <div class="th borTes">Rokok apa aja?</div>
-
-                    <!-- <div class="td borTes">1.</div>
-                    <div class="td borTes">Fatawa imam al Muftin</div>
-                    <div class="td borTes">24</div>
-                    <div class="td borTes">L</div>
-                    <div class="td borTes">Y</div>
-                    <div class="td borTes">Ezbles</div> -->
-
-                </div>
+        <div class="formCard">
+            <div class="tableContainer">
+                <table class="surveyTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama User</th>
+                            <th>Umur User</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Merokok Y/N</th>
+                            <th>Rokok apa aja?</th>
+                        </tr>
+                    </thead>
+                    <tbody id="surveyBody">
+                    </tbody>
+                </table>
             </div>
         </div>
 
     </div>
 
     <script>
-        let data = [];
-        data = localStorage.getItem("semuaDataSurvei");
-        data = JSON.parse(data);
+        const dataSurvei = JSON.parse(localStorage.getItem("semuaDataSurvei")) || [];
+        const tableBody = document.getElementById("surveyBody");
 
-        const container = document.querySelector(".grid");
+        dataSurvei.forEach((item, index) => {
+            const row = document.createElement("tr");
 
-        data.forEach((item, index) => {
-            const noUrut = document.createElement("div")
-            noUrut.classList.add("td")
-            noUrut.textContent = (index + 1);
+            const noUrut = document.createElement("td");
+            noUrut.textContent = index + 1;
 
-            const Dnama = document.createElement("div")
-            Dnama.classList.add("td")
+            const Dnama = document.createElement("td");
             Dnama.textContent = item.nama;
 
-            const Dumur = document.createElement("div");
-            Dumur.classList.add("td");
+            const Dumur = document.createElement("td");
             Dumur.textContent = item.umur;
 
-            const DJK = document.createElement("div")
-            DJK.classList.add("td")
-            DJK.textContent = item.jenisKelamin
+            const DJenisKelamin = document.createElement("td");
+            DJenisKelamin.textContent = item.jenisKelamin;
 
-            const DPR = document.createElement("div")
-            DPR.classList.add("td")
-            DPR.textContent = item.YNrokok;
+            const DPerokok = document.createElement("td");
+            DPerokok.textContent = item.YNrokok;
 
-            const DRokok = document.createElement("div")
-            DRokok.classList.add("td")
+            const DRokok = document.createElement("td");
             DRokok.textContent = item.macamRokok;
 
-            container.appendChild(noUrut);
-            container.appendChild(Dnama);
-            container.appendChild(Dumur);
-            container.appendChild(DJK);
-            container.appendChild(DPR);
-            container.appendChild(DRokok);
+            row.appendChild(noUrut);
+            row.appendChild(Dnama);
+            row.appendChild(Dumur);
+            row.appendChild(DJenisKelamin);
+            row.appendChild(DPerokok);
+            row.appendChild(DRokok);
+
+            tableBody.appendChild(row);
         });
     </script>
-
 
 </body>
 

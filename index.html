@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -36,6 +36,9 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            border-left: 1px solid #dadce0;
+            border-right: 1px solid #dadce0;
+            border-bottom: 1px solid #dadce0;
         }
 
         .headerCard {
@@ -54,6 +57,8 @@
             font-size: 16px;
             color: #202124;
             font-weight: 500;
+            display: block;
+            width: 100%;
         }
 
         .input {
@@ -131,25 +136,25 @@
 
 <body>
 
-    <form class="form borTes" id="formPerokok">
-        <div class="formCard headerCard borTes">
+    <form class="form" id="formPerokok">
+        <div class="formCard headerCard">
             <h1>Kuisioner Survei</h1>
         </div>
 
-        <div class="formCard borTes">
+        <div class="formCard">
             <label class="Pertanyaan" for="namaUser">Siapa nama anda?</label>
             <input type="text" name="namaUser" id="namaUser" class="input" placeholder="Jawaban teks singkat" required>
         </div>
 
-        <div class="formCard borTes">
+        <div class="formCard">
             <label class="Pertanyaan" for="umurUser">Berapa umur anda?</label>
             <input type="text" name="umurUser" id="umurUser" class="input" placeholder="Jawaban teks singkat" required>
         </div>
 
-        <div class="formCard">
-            <span class="Pertanyaan">Apa jenis kelamin anda?</span>
+        <fieldset class="formCard">
+            <legend class="Pertanyaan">Apa jenis kelamin anda?</legend>
             <div>
-                <div class="optionRow borTes">
+                <div class="optionRow">
                     <input type="radio" name="JK" id="jk-l" value="Laki-laki" required>
                     <label for="jk-l">Laki-laki</label>
                 </div>
@@ -158,26 +163,26 @@
                     <label for="jk-p">Perempuan</label>
                 </div>
             </div>
-        </div>
+        </fieldset>
 
-        <div class="formCard borTes">
-            <span class="Pertanyaan">Apakah anda perokok?</span>
+        <fieldset class="formCard">
+            <legend class="Pertanyaan">Apakah anda perokok?</legend>
             <div>
-                <div class="optionRow borTes">
+                <div class="optionRow">
                     <input type="radio" name="PR" id="pr-ya" value="Ya" required>
                     <label for="pr-ya">Ya</label>
                 </div>
-                <div class="optionRow borTes">
+                <div class="optionRow">
                     <input type="radio" name="PR" id="pr-tidak" value="Tidak">
                     <label for="pr-tidak">Tidak</label>
                 </div>
             </div>
-        </div>
+        </fieldset>
 
-        <div class="formCard borTes">
-            <span class="Pertanyaan">Rokok apa aja yg pernah kamu coba?</span>
+        <fieldset class="formCard">
+            <legend class="Pertanyaan">Rokok apa aja yg pernah kamu coba?</legend>
             <div>
-                <div class="optionRow borTes">
+                <div class="optionRow">
                     <input type="checkbox" name="RokokApa" id="ggF" value="Gudang Garam Filter">
                     <label for="ggF">Gudang Garam Filter</label>
                 </div>
@@ -185,18 +190,18 @@
                     <input type="checkbox" name="RokokApa" id="LS" value="Lucky Strike">
                     <label for="LS">Lucky Strike</label>
                 </div>
-                <div class="optionRow borTes">
+                <div class="optionRow">
                     <input type="checkbox" name="RokokApa" id="MLB" value="Marlboro">
                     <label for="MLB">Marlboro</label>
                 </div>
-                <div class="optionRow borTes">
+                <div class="optionRow">
                     <input type="checkbox" name="RokokApa" id="ESE" value="Esse">
                     <label for="ESE">Esse</label>
                 </div>
             </div>
-        </div>
+        </fieldset>
 
-        <div class="buttonGrup borTes">
+        <div class="buttonGrup">
             <button type="submit" class="btnSubmit">Kirim</button>
             <button type="reset" class="btn-reset">Kosongkan formulir</button>
         </div>
@@ -231,13 +236,7 @@
                 macamRokok: listRokok
             };
 
-            let kumpulanData = localStorage.getItem("semuaDataSurvei");
-
-            if (kumpulanData == null) {
-                kumpulanData = [];
-            } else {
-                kumpulanData = JSON.parse(kumpulanData);
-            }
+            const kumpulanData = JSON.parse(localStorage.getItem("semuaDataSurvei")) || [];
 
             kumpulanData.push(dataBaru);
 
